@@ -9,7 +9,7 @@
 #include <fstream>
 #include <vector>
 #include <math.h>
-iu
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -103,7 +103,7 @@ MainWindow::MainWindow(QWidget *parent) :
         for(int y = 0; y < matrix.size(); y++)
         {
             matrix[y][x]=x*255/matrix[0].size();
-            //matrix[y][x]=255*exp(0.0001*(x-256)*(x-256)+0.001*(y-256)*(y-256));
+            //matrix[y][x]=255*exp(-0.0001*(x-matrix[0].size()/2.0)*(x-matrix[0].size()/2.0)-0.001*(y-matrix.size()/2.0)*(y-matrix.size()/2.0));
         }
     }
 
@@ -176,8 +176,12 @@ MainWindow::MainWindow(QWidget *parent) :
         }
     }
 
-    ui->label_image6->setPixmap(QPixmap::fromImage(imageFromMatrix));
-    ui->label_image6->show();
+    QGraphicsScene * scene = new QGraphicsScene(this);
+    QGraphicsView * view = ui->graphicsView;
+    view->setScene(scene);
+
+    scene->addPixmap(QPixmap::fromImage(imageFromMatrix));
+
 
     qDebug()<<sizeof(unsigned int); //4Byte on my computer
 }

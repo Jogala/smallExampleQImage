@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
@@ -48,7 +49,7 @@ public:
     QLabel *label_image5;
     QVBoxLayout *verticalLayout_6;
     QLabel *label_6;
-    QLabel *label_image6;
+    QGraphicsView *graphicsView;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -57,7 +58,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(1438, 797);
+        MainWindow->resize(1502, 887);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         layoutWidget = new QWidget(centralWidget);
@@ -169,12 +170,10 @@ public:
 
         verticalLayout_6->addWidget(label_6);
 
-        label_image6 = new QLabel(layoutWidget);
-        label_image6->setObjectName(QStringLiteral("label_image6"));
-        sizePolicy.setHeightForWidth(label_image6->sizePolicy().hasHeightForWidth());
-        label_image6->setSizePolicy(sizePolicy);
+        graphicsView = new QGraphicsView(layoutWidget);
+        graphicsView->setObjectName(QStringLiteral("graphicsView"));
 
-        verticalLayout_6->addWidget(label_image6);
+        verticalLayout_6->addWidget(graphicsView);
 
 
         gridLayout->addLayout(verticalLayout_6, 1, 2, 1, 1);
@@ -182,7 +181,7 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 1438, 21));
+        menuBar->setGeometry(QRect(0, 0, 1502, 21));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -209,8 +208,7 @@ public:
         label_image4->setText(QApplication::translate("MainWindow", "TextLabel", 0));
         label_5->setText(QApplication::translate("MainWindow", "5 grayScaleImage from matrix", 0));
         label_image5->setText(QApplication::translate("MainWindow", "TextLabel", 0));
-        label_6->setText(QApplication::translate("MainWindow", "6 jpg -> matrix -> grayscale ", 0));
-        label_image6->setText(QApplication::translate("MainWindow", "TextLabel", 0));
+        label_6->setText(QApplication::translate("MainWindow", "6 jpg -> matrix -> grayscale shown via QGraphicsView and QGraphicsScene", 0));
     } // retranslateUi
 
 };

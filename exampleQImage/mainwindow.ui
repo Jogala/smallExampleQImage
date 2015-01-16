@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1438</width>
-    <height>797</height>
+    <width>1502</width>
+    <height>887</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -149,22 +149,12 @@
        <item>
         <widget class="QLabel" name="label_6">
          <property name="text">
-          <string>6 jpg -&gt; matrix -&gt; grayscale </string>
+          <string>6 jpg -&gt; matrix -&gt; grayscale shown via QGraphicsView and QGraphicsScene</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QLabel" name="label_image6">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>TextLabel</string>
-         </property>
-        </widget>
+        <widget class="QGraphicsView" name="graphicsView"/>
        </item>
       </layout>
      </item>
@@ -176,7 +166,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1438</width>
+     <width>1502</width>
      <height>21</height>
     </rect>
    </property>
