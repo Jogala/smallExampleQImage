@@ -9,7 +9,7 @@
 #include <fstream>
 #include <vector>
 #include <math.h>
-
+iu
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -108,7 +108,7 @@ MainWindow::MainWindow(QWidget *parent) :
     }
 
 
-    QImage imageFromMatrix = QImage(matrix.size(),matrix[0].size(),QImage::Format_RGB888);
+    QImage imageFromMatrix = QImage(matrix[0].size(),matrix.size(),QImage::Format_RGB888);
 
     for(int x = 0; x < matrix[0].size(); x++)
     {
